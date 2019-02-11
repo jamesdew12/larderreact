@@ -7,8 +7,12 @@ import thunk from 'redux-thu';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css';
+import rootReducer from "./rootReducer";
 
-
+const store = createStore(
+  rootReducer,
+  applyMiddleware(thunk)
+);
 ReactDOM.render(
   <BrowserRouter>
   <App />
